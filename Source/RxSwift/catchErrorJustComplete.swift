@@ -15,7 +15,7 @@ extension ObservableType {
      - returns: An observable sequence that never errors and completes when an error occurs in the underlying sequence
      */
     public func catchErrorJustComplete() -> Observable<Element> {
-        return catchError { _ in
+        return self.catch { _ in
             return Observable.empty()
         }
     }
